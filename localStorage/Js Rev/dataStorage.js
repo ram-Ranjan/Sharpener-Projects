@@ -1,6 +1,6 @@
 
 
-localStorage.setItem("pressure",80)
+localStorage.setItem("username","Ranjan")
 //localStorage.removeItem("pressure")
 
 
