@@ -1,8 +1,9 @@
+
 // Get references to the necessary elements
 const expenseForm = document.getElementById('form');
 const categorySelect = document.getElementById('category');
 const amountInput = document.getElementById('amount');
-const descInput = document.getElementById('desc');
+const descInput = document.querySelector('input[name="desc"]');
 const balanceDisplay = document.getElementById('balance');
 const historyList = document.getElementById('history');
 
@@ -36,7 +37,6 @@ function addExpense(event) {
   const category = categorySelect.value;
   const amount = parseFloat(amountInput.value);
   const desc = descInput.value;
-
   if (category && amount && desc) {
     const newExpense = { category, amount, desc };
     expenses.push(newExpense);
@@ -46,13 +46,13 @@ function addExpense(event) {
   }
 }
 
+ 
 // Edit an expense
 function editExpense(index) {
   const expense = expenses[index];
   categorySelect.value = expense.category;
   amountInput.value = expense.amount;
   descInput.value = expense.desc;
-
   // Remove the expense from the array
   expenses.splice(index, 1);
   localStorage.setItem('expenses', JSON.stringify(expenses));
@@ -79,3 +79,4 @@ historyList.addEventListener('click', (event) => {
 
 // Render the expense history on page load
 renderHistory();
+

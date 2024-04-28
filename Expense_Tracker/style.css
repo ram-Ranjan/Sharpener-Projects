@@ -1,94 +1,88 @@
-/* Reset styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Global styles */
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  
-  #main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1, h2, h3 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Container styles */
-  #container {
-    display: flex;
-    justify-content: space-between;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  #left, #right {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  /* Form styles */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="number"],
-  input[type="text"],
-  select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 15px;
-  }
-  
-  input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
-  /* Balance styles */
-  #balance {
-    font-size: 36px;
-    font-weight: bold;
-    color: #4CAF50;
-  }
-  
-  /* History styles */
-  #history {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  #history li {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  #history li:last-child {
-    border-bottom: none;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+#main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+#left, #right {
+  flex: 1;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #5dc260;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #1d9e24;
+}
+
+#balance {
+  font-size: 36px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+#history {
+  list-style-type: none;
+  padding: 0;
+}
+
+#history li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#history li:last-child {
+  border-bottom: none;
+}
