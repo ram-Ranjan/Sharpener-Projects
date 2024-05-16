@@ -73,6 +73,7 @@ input[type="submit"]:hover {
   color: #4CAF50;
 }
 
+
 #history {
   list-style-type: none;
   padding: 0;
@@ -85,4 +86,16 @@ input[type="submit"]:hover {
 
 #history li:last-child {
   border-bottom: none;
+}
+
+button{
+  background-color: #5dc260;
+  padding: 10px; 
+  border-radius: 10%;
+  color:#fff;
+  border: none;
+}
+button:hover{
+  background-color: #1d9e24;
+
 }
