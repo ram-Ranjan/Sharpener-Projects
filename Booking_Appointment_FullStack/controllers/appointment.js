@@ -1,68 +1,60 @@
 const Appointment = require('../models/appointment');
-const path = require('path')
-const fs = require('fs')
-const sequelize = require('../util/db')
 
-
-
-
-exports.postAppointment =(req,res,next) => {
-
-    const userName = req.body.userName;
-    const email = req.body.email;
-    const password = req.body.password;
-
+exports.postAppointment = (req, res, next) => {
+    const { username, email, phone } = req.body;
+    
     Appointment.create({
-        userName:userName,
-        email:email,
-        password:password
+        username: username,
+        email: email,
+        phone: phone
     })
     .then(appointment => {
         console.log('Appointment Created');
         res.status(201).json(appointment);
     })
-    .catch(err => res.status(500).json({ error: error.message }));
-    
+    .catch(err => res.status(500).json({ error: err.message }));
 }
 
-exports.getAllAppointments =  (req, res) => {
+exports.getAllAppointments = (req, res) => {
     Appointment.findAll()
     .then(appointments => {
         res.status(200).json(appointments);
     })
-     .catch(error => {
-      res.status(500).json({ error: error.message });
+    .catch(error => {
+        res.status(500).json({ error: error.message });
     })
-  };
+};
 
-exports.putAppointment = (req,res,next) => {
-    const appointId = req.params.appointId;
+exports.putAppointment = (req, res, next) => {
+    const appointId = req.params.id; // Changed from appointId to id to match route
     Appointment.findByPk(appointId)
     .then(appointment => {
         if(appointment){
-            appointment.update(req.body);
-            res.status(200).json(appointment)
+            return appointment.update(req.body);
         }
+        throw new Error('Appointment not found');
+    })
+    .then(updatedAppointment => {
+        res.status(200).json(updatedAppointment)
     })
     .catch(error => {
         res.status(500).json({ error: error.message });
-      });
+    });
 }
 
-exports.deleteAppointment = (req,res,next) => {
-    const appointId = req.params.appointId;
+exports.deleteAppointment = (req, res, next) => {
+    const appointId = req.params.id; // Changed from appointId to id to match route
     Appointment.findByPk(appointId)
     .then(appointment => {
         if(appointment){
-            appointment.destroy();
-            res.status(204).json()
+            return appointment.destroy();
         }
+        throw new Error('Appointment not found');
+    })
+    .then(() => {
+        res.status(204).send();
     })
     .catch(error => {
         res.status(500).json({ error: error.message });
-      });
+    });
 }
-
-
-// module.exports = sequelize;
-

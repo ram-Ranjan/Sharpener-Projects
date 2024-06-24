@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking App</title>
+    <title>Booking Appointment App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
-
     <div class="main">
-
         <h1>Booking Appointment App</h1>
-        <form id="formData" onsubmit="handleFormData(event)"> 
-            <input type="hidden" id="appointId" >
+        <form id="appointmentForm" onsubmit="handleFormData(event)">
+            <input type="hidden" id="appointId" name="appointId">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username" />
+            <input type="text" name="username" id="username" required>
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" required>
             <label for="phone">Phone No</label>
-            <input type="tel" name="phone" id="phone" />
-            <button type="submit">Submit</button>
-          </form>
-          <ul></ul>
-
-
-
+            <input type="tel" name="phone" id="phone" required>
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+        <ul id="appointmentList"></ul>
     </div>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="script.js"></script>
-
 </body>
-
-</html>s
+</html>
