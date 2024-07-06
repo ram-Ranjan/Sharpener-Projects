@@ -7,4 +7,4 @@ const sequelize = new Sequelize('booking_fullstack','root','root@321',
     dialect: 'mysql'
 });
 
-module.exports=sequelize;
+module.exports=sequelize;  

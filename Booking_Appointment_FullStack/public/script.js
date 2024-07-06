@@ -32,8 +32,10 @@ function createAppointment(userDetails) {
 }
 
 function updateAppointment(appointId, userDetails) {
+  console.log('Updating appointment:', appointId, userDetails);
   axios.put(`/appointments/${appointId}`, userDetails)
       .then(response => {
+        console.log('Update response:', response.data);
           const updatedAppointment = response.data;
           const listItem = document.querySelector(`li[data-id="${appointId}"]`);
           if (listItem) {
@@ -42,6 +44,7 @@ function updateAppointment(appointId, userDetails) {
           clearForm();
       })
       .catch(error => {
+        console.error('Error updating appointment:', error.response);
           console.error('Error updating appointment:', error);
           alert('Failed to update appointment: ' + error.response.data.error);
       });
@@ -62,11 +65,11 @@ function loadAppointments() {
           alert('Failed to load appointments: ' + error.response.data.error);
       });
 }
-
+ 
 function displayUserOnScreen(appointment) {
   const appointmentList = document.getElementById('appointmentList');
   const listItem = document.createElement('li');
-  listItem.setAttribute('data-id', appointment.id);
+  listItem.setAttribute('data-id', appointment.id);//data-id is set explicitly by the appointmentId
   listItem.innerHTML = createAppointmentHTML(appointment);
   appointmentList.appendChild(listItem);
 }

@@ -16,7 +16,8 @@ const adminRoutes = require('./routes/admin');
 app.use('/appointments', adminRoutes);
 
 sequelize
-    .sync({ force: true }) // Be careful with {force: true} in production!
+.sync()
+   // .sync({ force: true }) // Be careful with {force: true} in production!
     .then(() => {
         console.log('Database & tables created!');
         app.listen(4000, () => {
