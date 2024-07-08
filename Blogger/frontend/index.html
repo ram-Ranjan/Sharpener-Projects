@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="form-container">
-        <h2>Create a New Blog Post</h2>
-        <form id="blogForm">
-            <input type="text" id="title" placeholder="Blog Title" required>
-            <input type="text" id="author" placeholder="Blog Author" required>
-            <textarea id="content" placeholder="Blog Content" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="container">
+        <div class="form-container">
+            <h2>Create a New Blog Post</h2>
+            <form id="blogForm">
+                <input type="text" id="title" placeholder="Blog Title" required>
+                <input type="text" id="author" placeholder="Blog Author" required>
+                <textarea id="content" placeholder="Blog Content" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="blogs-container">
+            <h2>Blog Posts</h2>
+            <div id="blogList"></div>
+        </div>
     </div>
-    <div class="blogs-container">
-        <h2>Blog Posts</h2>
-        <div id="blogList"></div>
-    </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
     <script src="script.js"></script>
 </body>

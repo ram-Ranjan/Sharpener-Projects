@@ -8,14 +8,15 @@ const commentRoutes = require('./routes/commentRoutes');
 const app = express();
 
 app.use(cors());
+
 app.use(express.json());
 
 app.use('/api/blogs', blogRoutes);
 app.use('/api/comments', commentRoutes);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync().then(() => {
   console.log('Database & tables created!');
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
